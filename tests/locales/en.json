@@ -1,0 +1,6 @@
+{
+  "valid_key_1": "foo EN",
+  "valid_key_2": "foo 2 EN",
+  "valid_key_dynamic_1": "foo dyn 1 EN",
+  "valid_key_dynamic_2": "foo dyn 2 EN"
+}

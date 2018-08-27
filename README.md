@@ -36,16 +36,67 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
     "rules": {
-        "i18n-validator/rule-name": 2
+        "i18n-validator/json-key-exists": [2, {
+            "locales": ["en", "it"],
+            "jsonBaseURIs": [
+                { "baseURI": "./my/locales/" }
+            ]
+        }]
     }
 }
 ```
 
 ## Supported Rules
 
-* Fill in provided rules here
+### `i18n-validator/json-key-exists`
+Checks that each translation key in code has a correspondig translation in jsons locales files.
 
+#### Options
 
+* `locales`: [String] (Required):
+    * Array of locales that will be used by the resolver.
+* `jsonBaseURIs`: [Object | String] (Required)
+    * Can contain objects:
+        ```json
+        "jsonBaseURIs": [
+            {
+                "baseURI": "./my/locales/",
+                "resolver": "./scripts/myCustomPathResolver",
+                "foo": "bar" 
+            },
+            {
+                "baseURI": "https://my.base.url/locales/",
+                "resolver": "./scripts/myCustomURLResolver" 
+            }
+        ]
+        ```
+    * Can contain strings pointing to a path or a URL:
+        ```json
+        "jsonBaseURIs": [
+            "./my/locales/",
+            "https://my.base.url/locales/"
+        ]
+        ```
+        Strings will use the default base resolver
 
+#### Resolver
 
+Resolver gets `locales` and the entire `jsonURIObj` and must return an array of jsons to be checked and eventual errors.
+
+```js
+function(locales, jsonURIObj) {
+    return {
+        jsons: [
+            {
+                path: "path/of/my.json",
+                content: jsonObj
+            }
+        ],
+        errors: [
+            "error1",
+            "error2"
+        ]
+    };
+}
+```
 
