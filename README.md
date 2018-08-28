@@ -100,3 +100,81 @@ function(locales, jsonURIObj) {
 }
 ```
 
+## Examples
+
+### Simple
+This will search among all jsons for `foo` key
+
+JS
+```js
+I18n.t(`foo`);
+```
+JSON
+```json
+{
+    "foo": "Foo value"
+}
+```
+
+### Nested
+This will search among all jsons for plain or nested `foo1.foo2` key
+
+JS
+```js
+I18n.t(`foo1.foo2`);
+```
+JSON
+```json
+{
+    "foo1.foo2": "Foo value",
+}
+```
+OR
+```json
+{
+    "foo1": {
+        "foo2": "Foo value"
+    }
+}
+```
+
+### Template Literals in translation key
+This will search among all jsons for plain or nested `foo.bar1` and `foo.bar2` keys
+
+JS
+```js
+I18n.t(`foo.${bar}`); /* eslint-plugin-i18n-validator/json-key-exists { "bar": ["bar1","bar2"]} */
+```
+
+JSON
+```json
+{
+    "foo.bar1": "Bar1 value",
+    "foo.bar2": "Bar2 value"
+}
+```
+OR
+```json
+{
+    "foo": {
+        "bar1": "Bar1 value",
+        "bar2": "Bar2 value"
+    }
+}
+```
+
+### Conditional Expression in translation key
+This will search among all jsons for `foo` and `bar` keys
+
+JS
+```js
+I18n.t(foo ? `foo` : `bar`);
+```
+
+JSON
+```json
+{
+    "foo": "Foo value",
+    "bar": "Bar value
+}
+```
