@@ -10,18 +10,22 @@
   "author": "Fabio Todaro",
   "main": "lib/index.js",
   "scripts": {
+    "coveralls": "cat ./reports/coverage/lcov.info | coveralls",
     "lint": "eslint ./lib && eslint ./tests",
-    "test": "mocha tests --recursive"
+    "test": "npm run lint && npm run unit-test",
+    "unit-test": "istanbul cover --dir reports/coverage node_modules/mocha/bin/_mocha tests/**/*.js -- --reporter dot"
   },
   "dependencies": {
     "dotty": "^0.1.0",
     "es6-template-render": "^1.3.1",
+    "istanbul": "^0.4.5",
     "requireindex": "~1.1.0",
     "sync-request": "^6.0.0"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "mock-require": "^3.0.2"
   },
   "engines": {
     "node": ">=0.10.0"
