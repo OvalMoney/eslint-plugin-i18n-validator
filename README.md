@@ -1,6 +1,5 @@
 # eslint-plugin-i18n-validator
 [![Coverage Status](https://coveralls.io/repos/github/OvalMoney/eslint-plugin-i18n-validator/badge.svg?branch=master)](https://coveralls.io/github/OvalMoney/eslint-plugin-i18n-validator?branch=master)
-
 [![Build Status](https://travis-ci.org/OvalMoney/eslint-plugin-i18n-validator.svg?branch=master)](https://travis-ci.org/OvalMoney/eslint-plugin-i18n-validator)
 
 Validate i18n keys existence

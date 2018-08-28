@@ -1,13 +1,26 @@
 {
   "name": "eslint-plugin-i18n-validator",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Validate i18n keys existence",
   "keywords": [
     "eslint",
     "eslintplugin",
-    "eslint-plugin"
+    "eslint-plugin",
+    "json",
+    "i18n",
+    "translations",
+    "internationalization",
+    "intl",
+    "linter"
   ],
-  "author": "Fabio Todaro",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:OvalMoney/eslint-plugin-i18n-validator.git"
+  },
+  "author": "OvalMoney LTD",
+  "contributors": [
+    "Fabio Todaro <fbregist@gmail.com>"
+  ],
   "main": "lib/index.js",
   "scripts": {
     "coveralls": "cat ./reports/coverage/lcov.info | coveralls",
