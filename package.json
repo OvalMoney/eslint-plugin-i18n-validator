@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-i18n-validator",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Validate i18n keys existence",
   "keywords": [
     "eslint",
@@ -44,5 +44,5 @@
   "engines": {
     "node": ">=0.10.0"
   },
-  "license": "ISC"
+  "license": "MIT"
 }
