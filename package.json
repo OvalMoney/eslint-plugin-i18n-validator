@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-i18n-validator",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Validate i18n keys existence",
   "keywords": [
     "eslint",
@@ -31,11 +31,11 @@
   "dependencies": {
     "dotty": "^0.1.0",
     "es6-template-render": "^1.3.1",
-    "istanbul": "^0.4.5",
     "requireindex": "~1.1.0",
     "sync-request": "^6.0.0"
   },
   "devDependencies": {
+    "istanbul": "^0.4.5",
     "coveralls": "^3.0.2",
     "eslint": "^4.19.1",
     "mocha": "^5.2.0",
